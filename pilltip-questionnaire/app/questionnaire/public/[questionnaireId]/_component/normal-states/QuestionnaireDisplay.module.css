@@ -1,3 +1,111 @@
+/* 전체 페이지 */
+.page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: "Pretendard";
+}
+
+/* Top Bar */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e4ec;
+  height: 60px;
+}
+
+.topBarLeft {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #afb8c1;
+}
+
+.topBarRight {
+  position: relative;
+}
+
+.userIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.userIconImg {
+  width: 24px;
+  height: 24px;
+}
+
+.userIcon:hover {
+  background-color: #f3f4f6;
+}
+
+.userMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #e2e4ec;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  min-width: 200px;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.menuItem:last-child {
+  border-bottom: none;
+}
+
+.menuLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.menuValue {
+  font-size: 0.875rem;
+  color: #323439;
+  font-weight: 500;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.logoutButton:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+.mainContent {
+  padding: 2rem;
+}
+
 /* 전체 컨테이너 */
 .container {
   min-height: 100vh;
@@ -9,19 +117,132 @@
 }
 
 .wrapper {
-  max-width: 64rem;
+  max-width: 850px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+.questionnaireHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 850px;
+  height: 233px;
+  text-align: center;
+  gap: 20px;
+}
+
+.questionnaireHeader > h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 57px;
+  color: #323439;
+}
+
+.questionnaireHeader > p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  color: #949ba8;
+}
+
 .card {
   background-color: #f9fafb;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
-  max-width: 540px;
+  width: 850px;
   margin: 0 auto;
+  position: relative;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 98.5%,
+    98.75% 100%,
+    97.5% 98.5%,
+    96.25% 100%,
+    95% 98.5%,
+    93.75% 100%,
+    92.5% 98.5%,
+    91.25% 100%,
+    90% 98.5%,
+    88.75% 100%,
+    87.5% 98.5%,
+    86.25% 100%,
+    85% 98.5%,
+    83.75% 100%,
+    82.5% 98.5%,
+    81.25% 100%,
+    80% 98.5%,
+    78.75% 100%,
+    77.5% 98.5%,
+    76.25% 100%,
+    75% 98.5%,
+    73.75% 100%,
+    72.5% 98.5%,
+    71.25% 100%,
+    70% 98.5%,
+    68.75% 100%,
+    67.5% 98.5%,
+    66.25% 100%,
+    65% 98.5%,
+    63.75% 100%,
+    62.5% 98.5%,
+    61.25% 100%,
+    60% 98.5%,
+    58.75% 100%,
+    57.5% 98.5%,
+    56.25% 100%,
+    55% 98.5%,
+    53.75% 100%,
+    52.5% 98.5%,
+    51.25% 100%,
+    50% 98.5%,
+    48.75% 100%,
+    47.5% 98.5%,
+    46.25% 100%,
+    45% 98.5%,
+    43.75% 100%,
+    42.5% 98.5%,
+    41.25% 100%,
+    40% 98.5%,
+    38.75% 100%,
+    37.5% 98.5%,
+    36.25% 100%,
+    35% 98.5%,
+    33.75% 100%,
+    32.5% 98.5%,
+    31.25% 100%,
+    30% 98.5%,
+    28.75% 100%,
+    27.5% 98.5%,
+    26.25% 100%,
+    25% 98.5%,
+    23.75% 100%,
+    22.5% 98.5%,
+    21.25% 100%,
+    20% 98.5%,
+    18.75% 100%,
+    17.5% 98.5%,
+    16.25% 100%,
+    15% 98.5%,
+    13.75% 100%,
+    12.5% 98.5%,
+    11.25% 100%,
+    10% 98.5%,
+    8.75% 100%,
+    7.5% 98.5%,
+    6.25% 100%,
+    5% 98.5%,
+    3.75% 100%,
+    2.5% 98.5%,
+    1.25% 100%,
+    0% 98.5%
+  );
 }
 
 /* 헤더 영역 */
@@ -57,12 +278,13 @@
 }
 
 .expirationText {
-  color: #92400e;
+  color: #c5320d !important;
   font-weight: 500;
   font-size: 0.875rem;
 }
 
 .downloadButton {
+  margin-top: 40px;
   padding: 0.5rem 1rem;
   background-color: #2579ef;
   color: white;
@@ -112,8 +334,8 @@
   height: 1px;
   background: repeating-linear-gradient(
     to right,
-    #d1d5db 0,
-    #d1d5db 4px,
+    #afb8c1 0,
+    #afb8c1 4px,
     transparent 4px,
     transparent 8px
   );
@@ -125,8 +347,8 @@
   margin: 0.75rem 0;
   background: repeating-linear-gradient(
     to right,
-    #d1d5db 0,
-    #d1d5db 4px,
+    #afb8c1 0,
+    #afb8c1 4px,
     transparent 4px,
     transparent 8px
   );
