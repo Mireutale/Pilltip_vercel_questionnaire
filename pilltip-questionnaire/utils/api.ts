@@ -1,6 +1,6 @@
 import { ApiResponse } from "@/types/api";
 
-const API_BASE_URL = "http://localhost:20022";
+const API_BASE_URL = "https//pilltip.com:20022";
 
 export const fetchQRUrls = async (
   accessToken: string

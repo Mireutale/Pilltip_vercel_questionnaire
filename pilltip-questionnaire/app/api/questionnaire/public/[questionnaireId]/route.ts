@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 // 1. 인증서 검사 사용 / 2. 인증서 검사 비활성화
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "1";
 
-const BE_BASE_URL = process.env.BE_API_URL || "http://localhost:20022";
+const BE_BASE_URL = process.env.BE_API_URL || "https://pilltip.com:20022";
 
 export async function GET(
   request: NextRequest,
