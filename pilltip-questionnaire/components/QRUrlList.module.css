@@ -1,0 +1,61 @@
+.container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.item:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.itemContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.patientName {
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.linkText {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.arrowIcon {
+  color: #2563eb;
+  width: 1.25rem;
+  height: 1.25rem;
+}
