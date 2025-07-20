@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQRUrls } from "@/hooks/useQRUrls";
 import { convertToRelativePath } from "@/utils/navigation";
@@ -10,7 +10,7 @@ import calendarOutline from "@/public/CalendarOutline.svg";
 import cogOutline from "@/public/CogOutline.svg";
 import userCircle from "@/public/UserCircle.svg";
 
-export default function PatientsPage() {
+function PatientsPageContent() {
   const [accessToken, setAccessToken] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -326,5 +326,52 @@ export default function PatientsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <div className={styles.page}>
+      <div className={styles.mainContent}>
+        <div className={styles.container}>
+          <div className={styles.title}>
+            <h1>문진표 관리</h1>
+          </div>
+          <div className={styles.tableContainer}>
+            <table className={styles.patientTable}>
+              <thead>
+                <tr>
+                  <th>제출 시각</th>
+                  <th>남은 조회 시간</th>
+                  <th>주소</th>
+                  <th>성별</th>
+                  <th>나이</th>
+                  <th>환자명</th>
+                  <th>환자 연락처</th>
+                  <th>복약 여부</th>
+                  <th>알러지 유무</th>
+                  <th>조회하기</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan={10} className={styles.loadingCell}>
+                    로딩 중...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function PatientsPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <PatientsPageContent />
+    </Suspense>
   );
 }
